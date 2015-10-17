@@ -115,7 +115,7 @@ public class ContatosApp {
     System.out.print("Digite o e-mail: ");
     email = entrada.nextLine();
 
-    String sql = "INSERT INTO TB_PESSOA (NM_PESSOA, DT_NASCIMENTO, VL_TELEFONE, VL_EMAIL) VALUES (?, ?, ?, ?)";
+    String sql = "INSERT INTO TB_PESSOA (NM_PESSOA, DT_NASCIMENTO, VL_TELEFONE, VL_EMAIL, DT_CADASTRO) VALUES (?, ?, ?, ?, ?)";
     try {
       conn = obterConexao();
       stmt = conn.prepareStatement(sql);
@@ -123,6 +123,7 @@ public class ContatosApp {
       stmt.setDate(2, new java.sql.Date(dataNasc.getTime()));
       stmt.setString(3, telefone);
       stmt.setString(4, email);
+      stmt.setDate(5, new java.sql.Date((new Date()).getTime()));
       //stmt.setDate(5, new java.sql.Date(System.currentTimeMillis()));
       stmt.executeUpdate();
       System.out.println("Registro incluido com sucesso.");

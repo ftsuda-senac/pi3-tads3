@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,6 +25,8 @@
            <tr>
                <td>${stat.count}</td>
                <td>${pes.nome}</td>
+               <td><fmt:formatDate value="${pes.dtNascimento}" pattern="dd/MM/yyyy" /></td>
+               <td>${pes.telefone}</td>
                <td>${pes.email}</td>
            </tr>
            </c:forEach> 

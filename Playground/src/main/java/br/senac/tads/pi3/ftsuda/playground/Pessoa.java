@@ -5,15 +5,44 @@
  */
 package br.senac.tads.pi3.ftsuda.playground;
 
+import java.util.Date;
+
 /**
  *
  * @author fernando.tsuda
  */
 public class Pessoa {
     
+    private Long id;
+    
     private String nome;
     
+    private Date dtNascimento;
+    
+    private String telefone;
+    
     private String email;
+    
+    private Date dtCadastro;
+
+    public Pessoa() {
+    }
+
+    public Pessoa(String nome, Date dtNascimento, String telefone, String email) {
+        this.nome = nome;
+        this.dtNascimento = dtNascimento;
+        this.telefone = telefone;
+        this.email = email;
+        this.dtCadastro = new Date();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -23,6 +52,22 @@ public class Pessoa {
         this.nome = nome;
     }
 
+    public Date getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(Date dtNascimento) {
+        this.dtNascimento = dtNascimento;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -30,6 +75,16 @@ public class Pessoa {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Date getDtCadastro() {
+        return dtCadastro;
+    }
+
+    public void setDtCadastro(Date dtCadastro) {
+        this.dtCadastro = dtCadastro;
+    }
+    
+
     
     
     

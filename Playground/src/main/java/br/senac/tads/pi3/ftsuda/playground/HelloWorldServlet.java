@@ -7,8 +7,14 @@ package br.senac.tads.pi3.ftsuda.playground;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,22 +43,9 @@ public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
-        Pessoa p = new Pessoa();
-        p.setNome("Fulano da Silva");
-        p.setEmail("fulano@teste.com.br");
-        listaPessoas.add(p);
-        
-        p = new Pessoa();
-        p.setNome("Maria Josefina");
-        p.setEmail("josefina@teste.com.br");
-        listaPessoas.add(p);
-        
-        p = new Pessoa();
-        p.setNome("Ciclano de Souza");
-        p.setEmail("ciclano@teste.com.br");
-        listaPessoas.add(p);
+       
+        ContatosDAO dao = new ContatosDAO();
+        List<Pessoa> listaPessoas = dao.listarPessoas();
         
         request.setAttribute("pessoas", listaPessoas);
         
@@ -73,11 +66,27 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nome = request.getParameter("nome");
+        String dtNascimento = request.getParameter("dtnascimento");
+        String telefone = request.getParameter("telefone");
         String email = request.getParameter("email");
+
+        DateFormat formatadorData = new SimpleDateFormat("dd/MM/yyyy");
+        Date dataNasc = null;
+        try {
+            dataNasc = formatadorData.parse(dtNascimento);
+        } catch (ParseException ex) {
+            dataNasc = new Date();
+        }
 
         Pessoa p = new Pessoa();
         p.setNome(nome);
+        p.setDtNascimento(dataNasc);
         p.setEmail(email);
+        p.setTelefone(telefone);
+        p.setDtCadastro(new Date());
+        
+        ContatosDAO dao = new ContatosDAO();
+        dao.incluirPessoa(p);
         
         request.setAttribute("pessoa", p);
         
