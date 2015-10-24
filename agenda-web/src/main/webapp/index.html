@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+  <head>
+    <title>Agenda Web - PI3</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Agenda Web</h1>
+    <h2>Exemplo de sistema web com Servlets e JSP</h2>
+    <p>Exemplo de listagem e inclusão de contatos no sistema</p>
+    <ul>
+      <li>Usa JavaDB como SGBD. Instruções para a criação do banco e o script para criação da tabela está no diretório META-INF.</li>
+      <li>Para login, usar os usuários "fulano" ou "ciclano", e a senha "abcd1234" (tudo sem aspas). O "fulano" tem permissões de administrador.</li>
+      <li>Neste exemplo, os usuários estão "mockeados", ou seja, não é feita consulta no banco de dados para autenticar o usuário.</li>
+      <li>Notar que, ao tentar acessar a lista de contatos sem login (mesmo colando a URL correta no browser), o sistema força um redirecionamento para a tela de login.</li>
+      <li>O contrário também é válido, ou seja, se o usuário logado tentar acessar a tela de login, o sistema o redireciona para a tela de listagem de contatos</li>
+      <li>Os arquivos css estão em /resources/css.</li>
+    </ul>
+    <a href="ListarContatosServlet">Acessar lista de contatos</a>&nbsp;<span>(Comparar a URL do Link e a URL que aparece na barra de endereço do browser)</span>
+  </body>
 </html>
