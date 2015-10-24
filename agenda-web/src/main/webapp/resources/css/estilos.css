@@ -1,0 +1,60 @@
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 20px;
+  padding: 0 3em;
+  background-color: #3498db;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 2.4em;
+}
+
+p {
+  padding: 0.3em;
+  line-height: 1.2em;
+}
+
+label {
+  display: inline-block;
+  min-width: 12em;
+}
+
+button, input[type='submit'] {
+  font-size: 1.2em;
+  min-width: 5em;
+  min-height: 1.5em;
+}
+
+table tr:first-of-type {
+  border-bottom: 1px solid #000;
+}
+
+table tr:nth-of-type(odd) td { /*par*/
+  background-color: #eee;
+}
+
+table tr:nth-of-type(even) td { /*impar*/
+  background-color: #ccc;
+}
+
+table tr td, table tr th {
+  padding: 0.3em;
+  border-left: 1px solid #000;
+  background-color: #ccc;
+}
+
+table tr td:last-of-type, table tr th:last-of-type {
+  border-right: 1px solid #000;
+}
+
+table tr th {
+  font-weight: bold;
+  background-color: #e74c3c;
+}
+
+legend {
+  font-size: 1.1em;
+  font-weight: bold;
+}
