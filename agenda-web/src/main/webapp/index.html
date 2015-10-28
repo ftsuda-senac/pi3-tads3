@@ -14,8 +14,46 @@
       <li>Neste exemplo, os usuários estão "mockeados", ou seja, não é feita consulta no banco de dados para autenticar o usuário.</li>
       <li>Notar que, ao tentar acessar a lista de contatos sem login (mesmo colando a URL correta no browser), o sistema força um redirecionamento para a tela de login.</li>
       <li>O contrário também é válido, ou seja, se o usuário logado tentar acessar a tela de login, o sistema o redireciona para a tela de listagem de contatos</li>
-      <li>Os arquivos css estão em /resources/css.</li>
+      <li>
+        <div>
+          Em relação ao exemplo anterior, foram feitas as seguintes mudanças nos arquivos do projeto:
+          <ul>
+            <li>As classes foram reorganizadas dentro dos pacotes (packages) conforme a finalidade do componente</li>
+            <li>As JSPs também foram reorganizadas dentro do diretório <code>/WEB-INF/jsp</code> <b>(Questão de prova: Pesquisar o motivo)</b></li>
+            <li>Os arquivos css estão em /resources/css.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div>
+          Classes importantes para entender o funcionamento da autenticação/autorização
+          <ul>
+            <li>
+              <div>
+                <h2>Autenticação</h2>
+                <ul>
+                  <li>LoginServlet.java</li>
+                  <li>LogoutServlet.java</li>
+                  <li>UsuarioSistema.java</li>
+                  <li>login.jsp</li>
+                  <li>erroLogin.jsp</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>Autorização</h2>
+                <ul>
+                  <li>AutorizacaoFilter.java</li>
+                  <li>UsuarioSistema.java</li>
+                  <li>erroNaoAutorizado.jsp</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
-    <a href="ListarContatosServlet">Acessar lista de contatos</a>&nbsp;<span>(Comparar a URL do Link e a URL que aparece na barra de endereço do browser)</span>
+    <h3><a href="ListarContatosServlet">Acessar lista de contatos</a>&nbsp;<span>(Comparar a URL do Link e a URL que aparece na barra de endereço do browser)</span></h3>
   </body>
 </html>
